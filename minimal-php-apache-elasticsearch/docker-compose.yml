@@ -1,0 +1,25 @@
+version: '3'
+services:
+  web:
+    build: .
+    volumes:
+      - .:/var/www/html/
+    ports:
+      - "8812:80"
+  elasticsearch:
+    image: "elasticsearch:7.5.1"
+    container_name: elasticsearch
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=false
+      - transport.host=127.0.0.1
+      - cluster.name=demo
+      - bootstrap.memory_lock=true
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+

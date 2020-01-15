@@ -1,0 +1,17 @@
+{
+    "name": "mahmutbayri/minimal-php-apache-elasticsearch",
+    "authors": [
+        {
+            "name": "Mahmut Bayri",
+            "email": "mahmutbayri@yahoo.com"
+        }
+    ],
+    "require": {
+        "elasticsearch/elasticsearch": "^7.4"
+    },
+    "config": {
+        "platform": {
+            "php": "7.3"
+        }
+    }
+}
