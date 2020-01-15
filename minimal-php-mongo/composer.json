@@ -1,0 +1,17 @@
+{
+    "name": "mahmutbayri/minimal-php-mongo",
+    "authors": [
+        {
+            "name": "Mahmut Bayri",
+            "email": "mahmutbayri@yahoo.com"
+        }
+    ],
+    "config": {
+        "platform": {
+            "ext-mongodb": "1.6"
+        }
+    },
+    "require": {
+        "mongodb/mongodb": "^1.5"
+    }
+}
