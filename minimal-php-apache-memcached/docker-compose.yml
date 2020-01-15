@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    build: .
+    volumes:
+      - .:/var/www/html/
+    ports:
+      - "8812:80"
+  memcached:
+    image: "memcached:latest"
