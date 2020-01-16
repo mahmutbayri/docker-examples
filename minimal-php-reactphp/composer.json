@@ -1,0 +1,12 @@
+{
+    "name": "mahmutbayri/minimal-php-reactphp",
+    "authors": [
+        {
+            "name": "Mahmut Bayri",
+            "email": "mahmutbayri@yahoo.com"
+        }
+    ],
+    "require": {
+        "react/http": "^0.8.5"
+    }
+}
