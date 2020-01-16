@@ -1,0 +1,26 @@
+version: '3'
+services:
+  nodejs:
+    build: .
+    image: nodejs
+    container_name: nodejs
+    restart: unless-stopped
+    networks:
+      - app-network
+    volumes:
+      - ./:/usr/app
+  webserver:
+    image: nginx:mainline-alpine
+    container_name: webserver
+    restart: unless-stopped
+    ports:
+      - 8812:80
+    volumes:
+      - ./nginx-conf:/etc/nginx/conf.d
+    depends_on:
+      - nodejs
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
