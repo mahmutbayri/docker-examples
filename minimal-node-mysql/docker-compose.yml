@@ -1,0 +1,26 @@
+version: "3"
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-server-80
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=.sweetpwd.
+      - MYSQL_DATABASE=my_db
+      - MYSQL_USER=db_user
+      - MYSQL_PASSWORD=.mypwd
+  website:
+    environment:
+      - MYSQL_DATABASE=my_db
+      - MYSQL_USER=db_user
+      - MYSQL_PASSWORD=.mypwd
+    container_name: minimal-node-mysql
+    build:
+      context: ./
+    volumes:
+      - .:/src/app
+    ports:
+      - 8812:3000
+    depends_on:
+      - mysql
