@@ -5,7 +5,10 @@
 
   <form action="{{route('task.update', {id: task.id})}}?_method=PUT" method="POST">
     {{ csrfField() }}
-    <input class="form-control" name="title" value="{{task.title}}" />
+    <div>
+        <input class="form-control" name="title" value="{{ old('title', task.title) }}" placeholder="Task Name" />
+        {{ elIf('<span>$self</span>', getErrorFor('title'), hasErrorFor('title')) }}
+    </div>
     <button type="submit" class="btn btn-primary">Update</button>
   </form>
 

@@ -2,6 +2,7 @@
 
 /** @type {typeof import('@adonisjs/lucid/src/Lucid/Model')} */
 const taskModel = use('App/Models/Task');
+const {validate} = use('Validator');
 
 class TaskController {
 
@@ -51,6 +52,18 @@ class TaskController {
    * Insert new task
    */
   async store({request, session, response}) {
+    const validation = await validate(
+      request.all(),
+      {
+        title: 'required|min:6',
+      }
+    );
+
+    if (validation.fails()) {
+      session.withErrors(validation.messages());
+      return response.redirect('back');
+    }
+
     const task = new taskModel();
     task.title = request.input("title");
     await task.save();
@@ -64,12 +77,24 @@ class TaskController {
    * Update a specific task
    */
   async update({request, session, response}) {
+    const validation = await validate(
+      request.all(),
+      {
+        title: 'required|min:6',
+      }
+    );
+
+    if (validation.fails()) {
+      session.withErrors(validation.messages());
+      return response.redirect('back');
+    }
+
     const task = await taskModel.findOrFail(request.params.id);
     task.title = request.input("title");
     await task.save();
 
     session.flash({notification: "Tasks Added!"});
-    return response.route('task.show', { id: task.id })
+    return response.route('task.show', {id: task.id});
   }
 
   /**

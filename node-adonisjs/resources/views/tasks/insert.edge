@@ -3,7 +3,10 @@
   <a class="btn btn-primary" href="{{route('task.index')}}">Back To List</a> <br/>
   <form action="{{route('task.store')}}" method="POST">
     {{ csrfField() }}
-    <input class="form-control" name="title" value="add new sd" placeholder="Task Name" />
+    <div>
+      <input class="form-control" name="title" value="{{ old('title', '') }}" placeholder="Task Name" />
+      {{ elIf('<span>$self</span>', getErrorFor('title'), hasErrorFor('title')) }}
+    </div>
     <button type="submit" class="btn btn-primary">Add</button>
   </form>
 @endsection
