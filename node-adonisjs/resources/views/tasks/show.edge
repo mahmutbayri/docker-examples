@@ -1,0 +1,9 @@
+@layout('layouts.master')
+@section('content')
+
+  <a class="btn btn-primary" href="{{route('task.index')}}">Back To List</a> <br/>
+
+  id: {{task.id}} <br />
+  {{task.title}} <br />
+  {{task.status}} <br />
+@endsection

@@ -1,0 +1,9 @@
+@layout('layouts.master')
+@section('content')
+  <a class="btn btn-primary" href="{{route('task.index')}}">Back To List</a> <br/>
+  <form action="{{route('task.store')}}" method="POST">
+    {{ csrfField() }}
+    <input class="form-control" name="title" value="add new sd" placeholder="Task Name" />
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+@endsection
