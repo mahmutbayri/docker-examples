@@ -1,0 +1,9 @@
+node_modules
+README.md
+ace
+.editorconfig
+.env.example
+.gitignore
+Dockerfile
+.git
+

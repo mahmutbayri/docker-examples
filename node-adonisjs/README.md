@@ -22,7 +22,12 @@ Then you can navigate `http://localhost:3333/task` url
     docker build -t node-adonisjs .
 
 ## Run
-    docker run -p 3333:3333 node-adonisjs
+    docker run -p 3333:3333 --name node-adonisjs-container node-adonisjs
+    
+## Cleaning container and image
+    
+    docker container rm -f node-adonisjs-container
+    docker image rm -f node-adonisjs
     
 Then you can navigate `http://localhost:3333/task` url
 
