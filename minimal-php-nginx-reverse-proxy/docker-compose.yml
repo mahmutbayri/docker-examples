@@ -1,0 +1,13 @@
+version: '3'
+services:
+  minimal-php-nginx-reverse-proxy-container:
+    container_name: minimal-php-nginx-reverse-proxy-container
+    build: .
+  web:
+    image: nginx:latest
+    ports:
+      - "8812:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - minimal-php-nginx-reverse-proxy-container
