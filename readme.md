@@ -19,3 +19,4 @@
 - [minimal-tomcat-maven-jsp](minimal-tomcat-maven-jsp)
 - [minimal-tomcat-static](minimal-tomcat-static)
 - [node-adonisjs](node-adonisjs)
+- [java-spring-framework-crud](java-spring-framework-crud)
