@@ -1,13 +1,12 @@
-# Cleanup    
-  
-    // delete image
-    docker image rm -f minimal-docker
-
+# Building   
     // build image
-    docker build -t minimal-docker .
+    docker build -t minimal-php-apache .
     
     // run image
-    docker run -p 8812:80 minimal-docker
+    docker run --publish 8812:80 --name minimal-php-apache-container minimal-php-apache
 
 # Test
-navigate -> http://localhost:8812/ 
+    http://localhost:8812/ 
+## Clean Up
+    docker container rm -f minimal-php-apache-container && docker image rm -f minimal-php-apache 
+
