@@ -1,0 +1,15 @@
+version: '3'
+services:
+  react-php-project:
+    container_name: react-php-project
+    build: .
+    volumes:
+      - ./reactphp:/var/www/html/
+  web:
+    image: nginx:latest
+    ports:
+      - 8812:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - react-php-project

@@ -31,7 +31,7 @@ Dockerfile ve index.php dosyasının olduğu çalışma klasörümüzde aşağı
 
 ## Docker Container oluşturmak ve çalıştırmak
 
-Aşağıdaki komut daha önce oluşturduğumuz `minimal-php-apache` imaj kullanılarak `minimal-php-apache` isminde bir container oluşturacak. Oluşturduğumuz imaj 80 portundan yayın yapacak şekilde ayarlanmış. Biz ise container oluşturulurken docker üzerindeki makinemizden `8812` portu gibi başka çalışmamalarımızla karışmayacak bir port üzerinden imaj içine bağlanmak istiroruz. Bunun için `--publish` parametresi kullandık. Bu parametreyi hemen hemen tüm örneklerde `-p` şeklinde kısaltılmış olarak görebilirsiniz.
+Aşağıdaki komut daha önce oluşturduğumuz `minimal-php-apache` imaj kullanılarak `minimal-php-apache-container` isminde bir container oluşturacak. Oluşturduğumuz imaj 80 portundan yayın yapacak şekilde ayarlanmış. Biz ise container oluşturulurken docker üzerindeki makinemizden `8812` portu gibi başka çalışmamalarımızla karışmayacak bir port üzerinden imaj içine bağlanmak istiyoruz. Bunun için `--publish` parametresi kullandık. Bu parametreyi hemen hemen tüm örneklerde `-p` şeklinde kısaltılmış olarak görebilirsiniz.
 
     docker run --publish 8812:80 --name minimal-php-apache-container minimal-php-apache
 
@@ -50,7 +50,7 @@ Bu makaleyi PHP'nin web sunucularda çalışma şekilleri hakkında genel bilgil
     docker run --publish 8812:80 --name minimal-php-apache-container -v "$PWD":/var/www/html minimal-php-apache
 
 
-Makelede anlatılanları uyguladıysanız oluşturduğunuz image ve container kaldırılması için aşağıdaki komutu çalıştırın.
+Makalede anlatılanları uyguladıysanız oluşturduğunuz image ve container kaldırılması için aşağıdaki komutu çalıştırın.
 
     docker container rm -f minimal-php-apache-container && docker image rm -f minimal-php-apache 
 
