@@ -19,5 +19,8 @@ Or you can test without adding your host file anything with curl like
 
     curl -XGET --header 'Host: php-docker.local' http://localhost:8812/index.php
 
+## Load test
 
+    siege --time=10s -c50 http://localhost:8812/index.php
+    siege --time=10s -c50 http://localhost:8812/static-file.txt
 
