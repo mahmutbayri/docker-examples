@@ -15,6 +15,7 @@
 - [minimal-php-mysql](minimal-php-mysql)
 - [minimal-php-nginx](minimal-php-nginx)
 - [minimal-php-nginx-reverse-proxy](minimal-php-nginx-reverse-proxy)
+- [minimal-php-nginx-load-balance](minimal-php-nginx-load-balance)
 - [minimal-php-reactphp](minimal-php-reactphp)
 - [minimal-tomcat-maven-jsp](minimal-tomcat-maven-jsp)
 - [minimal-tomcat-static](minimal-tomcat-static)
