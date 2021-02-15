@@ -6,7 +6,7 @@ This project is used express library to create a web server that uses 3000 port.
     docker build -t minimal-node .
 
 # Run
-    docker run -p 8812:80 --name minimal-node-container minimal-node
+    docker run -p 8812:3000 --name minimal-node-container minimal-node
 
 # Clean Up
     docker container rm -f minimal-node-container && docker image rm -f minimal-node

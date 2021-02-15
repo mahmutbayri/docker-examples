@@ -3,6 +3,7 @@
 - [minimal-laravel](minimal-laravel)
 - [minimal-nginx](minimal-nginx)
 - [minimal-node](minimal-node)
+- [minimal-node-static](minimal-node-static)
 - [minimal-node-mysql](minimal-node-mysql)
 - [minimal-node-nginx](minimal-node-nginx)
 - [minimal-php](minimal-php)
