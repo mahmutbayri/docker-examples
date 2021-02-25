@@ -2,7 +2,8 @@
 
 - [minimal-laravel](minimal-laravel)
 - [minimal-nginx](minimal-nginx)
-- [minimal-node](minimal-node)
+- [minimal-node (express server)](minimal-node)
+- [minimal-node-typescript (express server)](minimal-node-typescript)
 - [minimal-node-static](minimal-node-static)
 - [minimal-node-mysql](minimal-node-mysql)
 - [minimal-node-nginx](minimal-node-nginx)
