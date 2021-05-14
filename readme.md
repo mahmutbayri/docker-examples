@@ -1,5 +1,6 @@
 # List of examples
 
+- [Minimal C (CGI) + Apache](minimal-c-apache)
 - [minimal-laravel](minimal-laravel)
 - [minimal-nginx](minimal-nginx)
 - [minimal-node (express server)](minimal-node)
